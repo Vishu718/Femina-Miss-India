@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MissIndia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+       @import url(https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+        
+          
+        }
+        .header{
+            height: 100px;
+            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(233, 223, 223, 0.661),0 6px 20px 0 rgba(192, 186, 186, 0.942);
+            margin-bottom: 5px;
+            background-color: #fff;
+            
+        }
+        .sub{
+            height: 100%;
+            width: 25%;
+            margin: 0 5em;
+            float: left;
+        }
+        .img{
+            height: 100%;
+            width: 50%;
+            position: relative;
+        }
+        ul{
+            float: right;
+        }
+        ul li{
+            display: inline-block;
+            padding: 30px;
+            margin: 5px 10px 0 0;
+            font-size: large;
+            font-family:"Work Sans",sans-serif;
+            font-weight: 500;
+            
+        }
+       /* ul li a:hover{
+          cursor: pointer;
+          color:#dcb77c;
+          
+        }*/
+        .nn nav ul li a{
+          text-decoration: none;
+          color: black;
+}
+       .nn nav ul li a:hover{
+          color: #dcb77c;
+          font-weight: 600;
+}
+        .nn{
+            float: left;
+            
+        }
+        .sec{
+            width: 100%;
+            height: 39em;
+            margin-left: px;
+           
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        .banner1,
+.banner2,
+.banner3 {
+  width:100%;
+  height: 90%;
+  position: absolute;
+  left: 30px ;
+  right:0 ;
+  left: 0;
+  
+}
+
+.banner1 .slide1 img {
+  
+  animation: zoom-out 12s linear infinite;
+}
+
+
+
+
+@keyframes textUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+
+.slide1 {
+  animation: fade1 12s linear infinite;
+}
+
+.slide2 {
+  animation: fade2 12s linear infinite;
+}
+
+.slide3 {
+  animation: fade3 12s linear infinite;
+}
+
+@keyframes fade1 {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes fade2 {
+  0% {
+    visibility: hidden;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes fade3 {
+  0% {
+    visibility: hidden;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes zoom-out {
+  100% {
+    width: 100%;
+  }
+}
+.next1{
+  width: 100%;
+  height: 25em;
+  background-color: white;
+  margin-top: 20px;
+}
+
+
+.pre{
+  height: 70vh;
+  width: 100%;
+  background-image: url("menu-bg-2.jpg");
+  
+}
+.win{
+  margin: 15px 0 0 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  word-spacing: 2px;
+}
+.win img{
+  height: 50px;
+  width: 50px;
+}
+.miss_img{
+  height: 70%;
+  width: 25%;
+  float: left;
+  margin: 30px;
+  margin-left: 70px;
+  box-shadow:0 2px 4px 0 rgba(0,0,0,0.2),0 3px 10px 0 rgba(0,0,0,0.19);
+  position: relative;
+}
+.miss_img img{
+  border-radius: 10px;
+  display: block;
+}
+.spo{
+  margin-left: 48%;
+}
+.spo img{
+  height: 80px;
+  width: 80px;
+  margin-top: 10px;
+}
+.spo h1{
+  margin-left: -18px;
+  margin-top: -10px;
+}
+#button {
+  display: inline-block;
+  background-color: #e4af60;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: rgb(133, 77, 5);
+}
+#button:active {
+  background-color: rgb(169, 138, 14);
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 88.2%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.miss_img:hover .overlay {
+  opacity: 1;
+}
+ 
+ .event{
+  height: 30em;
+  width: 100%;
+}
+ .text{
+  height: 90%;
+  width: 50%;
+  float: left;
+ }
+ .text p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:115%;
+  margin:100px 0 0 70px;
+  font-weight: 500;
+  word-spacing: 5px;
+  letter-spacing: .5px;
+ }
+ .text h1{
+  margin: 50px 0 -60px 70px;
+ }
+ .world{
+  height: 50px;
+  width: 50px;
+  margin-left: 6em;
+ }
+.women{
+  float:left;
+  height: 93%;
+  width: 50%;
+ }
+ footer{
+  height: 30em;
+  width: 100%;
+  background-color:black;
+  position: absolute;
+ }
+ /*.eng img{
+  height: 150px;
+  width: 150px;
+  margin: 30px 0 0 38em;
+ }*/
+ 
+.spo_img{
+  margin-top: 20px;
+}
+.spo_img img{
+  height: 10em;
+  width: 15%;
+  padding:  0px;
+  margin-left: 100px;
+  border-radius: 5px;
+}
+/*.foote{
+        width: 90%;
+        height: 40px; 
+        margin: -70px 0 0 100px;
+        border-style: solid;
+        border-width: 0 0 0 3px;
+        border-color: #BE8A60;
+}
+.h{
+            color: white;
+            margin-bottom: 20px;
+            margin-left: 60px;
+        }
+.h a{
+  color: white;
+  text-decoration: none;
+}
+.foot{
+        border-style: solid;
+        border-width: 0 0 0 3px;
+        border-color: #BE8A60;
+
+       }
+       .open{
+            color: white;
+            margin-bottom: 20px;
+        }
+        .open img{
+          height: 40px;
+          width: 40px;
+          float: left;
+          margin: 5px;
+        }
+        .mail{
+            padding:15px; 
+            width:40%; 
+            border-radius:3px;
+        }
+        .submit{
+            border-radius:3px; 
+            padding: 15px;
+            background-color:#f3d7ab;
+            cursor: pointer;
+        }*/
+        .line{
+          width: 25%;
+          margin:5em 0 0 5em;
+          float: left;
+        }
+        .line h2 {
+          margin-bottom: 50px;
+          color: white;
+          font-family:Arial, Helvetica, sans-serif ;
+        }
+        .line p{
+          word-spacing: 5px;
+          font-family:Arial, Helvetica, sans-serif;
+          color: white;
+          
+        }
+        .info{
+          width: 25%;
+          float: left;
+          margin: 5em 0 0 10em;
+        }
+        .info h2{
+          color: white;
+        }
+        .info_link{
+          margin: 30px 0 0 10px;
+        }
+        .info_link span a{
+          text-decoration: none;
+          color: white;
+          font-size: large;
+          padding: 10px;
+          display: flex;
+        }
+        .add{
+          margin: 5em 0 0 5em;
+          width: 25%;
+          float: left;
+        }
+        .add h2{
+          color: white;
+        }
+        .add span{
+          display: flex;
+          color: white;
+          margin: 40px 0 0 0px;
+        }
+        .social{
+          width: 25%;
+          height: 50px;
+          margin: 20em 0 0 70px;
+          color: white;
+        }
+        .social img{
+          height: 40px;
+          width: 40px;
+          padding: 10px;
+        }
+        .social a img:hover{
+          color:white;
+        }
+        .copyright{
+          color: white;
+          text-align: center;
+          margin-top: 70px;
+          height: 50px;
+        }
+        
+    </style>
+</head>
+<body style="background-color:#f5ede0 ;">
+  <a id="button"></a>
+        <div class="header">
+            <div class="sub">
+                <img src="logo.jfif" class="img">
+            </div>
+            <div class="nn">
+            <nav>
+                <ul>
+                    <li><a href="femina.html">Home</a></li>
+                    <li><a href="About us.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav></div>
+        </div>
+    <div class="sec">
+        <div class="banner1 slide1">
+            <img src="miss-india_winners_2019.jpg" title="2019" alt="">
+        </div>
+        <div class="banner2 slide2">
+            <img src="contest.jpg" alt="">
+    <!--         <span></span> -->
+        </div>
+        <div class="banner3 slide3">
+            <img src="Femina-Miss-India-2022.webp" title="2022" alt="">
+    <!--         <span></span> -->
+        </div>
+    </div>
+    <div class="pre">
+              <div class="win">
+                <img src="crown.png">
+                <h1>Femina Miss India Winner 2022 </h1></div>
+              <div class="miss_img"> <img src="Sini.jpg" title="Sini">
+                <div class="overlay">Sini Sadanand Shetty<br>(Winner)</div>
+              </div>
+              <div class="miss_img"> <img src="rubal.jpg" title="Rubal">
+                <div class="overlay">Rubal Shekhawat<br>(1st runner-up)</div>
+              </div>
+              <div class="miss_img"> <img src="Shinata.jpg" title="Shinata">
+                <div class="overlay">Shinata Chauhan<br>(2nd runner-up)</div>
+              </div>
+    </div>
+    
+    <div class="event">
+      <div class="world">
+        <img src="miss-world.png">
+      </div>
+      <div class="text">
+        <h1>Femina Miss India</h1>
+        <p>
+          Miss India has been a torchbearer and beacon of talent promotion for decades, and it continues to offer opportunities galore for fresh talent to explore and experiment, along with instigating changes in numerous aspects of glamour and showbiz.
+        <br><br>Being affiliated with a significant brand with a long legacy and hall of fame allows the recipient to serve as the pageant's ambassador and spokesperson.
+        <br><br>Winning the title creates a rosy picture of sudden glory, celebrity, and popularity. It also garners an overnight sensation for the titleholder and the honour of being known and remembered as 'Miss India' in the public eye. The title confers the honour of serving as a role model, inspiration, and icon for youth.
+        
+        </p>
+      </div>
+      <div class="women">
+        <img src="Women.png">
+      </div>
+    </div>
+    <div class="next1">
+      <div class="spo">
+        <img src="download.png">
+        <h1>Sponsors</h1>
+      </div>
+      <div class="spo_img">
+          <img src="moj.png">
+          <img src="vlcc.png">
+          <img src="sephora.png">
+          <img src="pearls.jpg">
+      </div>
+
+</div>
+    <footer>
+      <div  class="line">
+        <h2>About Us</h2>
+        <p>
+          Miss India has been a torchbearer and beacon of talent promotion for decades, and it continues to offer opportunities galore for fresh talent to explore and experiment, along with instigating changes in numerous aspects of glamour and showbiz.
+        </p>
+      </div>
+      <div class="info">
+       <h2>Important Links</h2>
+       <div class="info_link">
+          <span><a href="femina.html" class="fa fa-home active">Home</a></span>
+          <span><a href="About us.html" class="fa fa-">About Us</a></span>
+          <span><a href="portfolio.html" class="fa fa-user">Portfolio</a></span>
+          <span><a href="Contact.html" class="fa fa-phone">Contact</a></span>
+       </div>
+      </div>
+      <div class="add">
+          <h2>Information</h2>
+          <div class="add_in">
+               <span class="fa fa-map-marker">123xyz,Mumbai</span>
+               <span class="fa fa-envelope">feminamissindia@gmail.com</span>
+               <span class="fa fa-mobile">1234567890</span>           
+          </div>
+      </div>
+      <div class="social">
+        <h2>Follow Us :-</h2>
+        <a href="#"><img src="facebook.png" ></a>
+        <a href="#"><img src="instagram.png"></a>
+        <a href="#"><img src="twitter.png"></a>
+        <a href="#"><img src="youtube.png"></a>
+      </div>
+      <div class="copyright">
+       @2021 wp-rig. All Rights Reserved
+      </div>
+    </footer>
+    
+    <script>
+      var btn = $('#button');
+
+$(window).scroll(function() {
+if ($(window).scrollTop() > 300) {
+btn.addClass('show');
+} else {
+btn.removeClass('show');
+}
+});
+
+btn.on('click', function(e) {
+e.preventDefault();
+$('html, body').animate({scrollTop:0}, '300');
+});
+
+
+  </script>
+</body>
+</html>
